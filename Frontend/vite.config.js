@@ -9,6 +9,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://akash-chat-app.vercel.app",
+        changeOrigin: true,
       },
     },
   },

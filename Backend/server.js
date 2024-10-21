@@ -21,11 +21,12 @@ app.use("/api/auth", authRoutes); //middleware
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.use(express.static(path.resolve(__dirname, "backend", "build")));
+app.use(express.static(path.join(__dirname, "../Frontend/dist")));
 
-app.get("*", (req, res) =>
-  res.sendFile(path.resolve(__dirname, "backend", "build", "index.html"))
-);
+// Handle React routes
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../Frontend/dist", "index.html"));
+});
 
 server.listen(PORT, () => {
   connectToMongoDB();

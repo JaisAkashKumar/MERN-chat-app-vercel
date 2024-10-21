@@ -21,11 +21,11 @@ app.use("/api/auth", authRoutes); //middleware
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.use(express.static(path.join(__dirname, "../Frontend/build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 // Handle React routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../Frontend/build", "index.html"));
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 server.listen(PORT, () => {

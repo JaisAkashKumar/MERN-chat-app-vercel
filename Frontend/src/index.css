@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -16,7 +21,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #555;
+  background: #313030;
 }
 
 ::-webkit-scrollbar-thumb {

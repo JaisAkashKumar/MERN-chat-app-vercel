@@ -21,10 +21,10 @@ app.use("/api/auth", authRoutes); //middleware
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-server.use(express.static(path.resolve(__dirname, "build")));
-//with immediate above and below lines frontend will run on our backend too
-server.get("*", (req, res) =>
-  res.sendFile(path.resolve("build", "index.html"))
+app.use(express.static(path.resolve(__dirname, "backend", "build")));
+
+app.get("*", (req, res) =>
+  res.sendFile(path.resolve(__dirname, "backend", "build", "index.html"))
 );
 
 server.listen(PORT, () => {

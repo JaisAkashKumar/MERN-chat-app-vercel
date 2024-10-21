@@ -21,11 +21,11 @@ app.use("/api/auth", authRoutes); //middleware
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.use(express.static(path.join(__dirname, "/Frontend/dist")));
+server.use(express.static(path.resolve(__dirname, "build")));
 //with immediate above and below lines frontend will run on our backend too
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "Frontend", "dist", "index.html"));
-});
+server.get("*", (req, res) =>
+  res.sendFile(path.resolve("build", "index.html"))
+);
 
 server.listen(PORT, () => {
   connectToMongoDB();

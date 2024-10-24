@@ -9,7 +9,7 @@ import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
-import cors from "cors";
+// import cors from "cors";
 import { fileURLToPath } from "url";
 
 // Get the filename and directory name
@@ -39,7 +39,7 @@ app.use(express.static(path.resolve(__dirname, "build")));
 
 // Handle React routes
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+  res.sendFile(path.resolve("build", "index.html"));
 });
 
 server.listen(PORT, () => {

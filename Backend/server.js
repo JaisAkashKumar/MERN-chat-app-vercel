@@ -16,13 +16,13 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const corsConfig = {
-  origin: "*", // Allow all origins (use specific domains in production)
-  credentials: true, // Allow cookies and credentials to be sent
-  methods: ["GET", "POST", "PATCH", "DELETE"], // Allow these HTTP methods
-};
+// const corsConfig = {
+//   origin: "*", // Allow all origins (use specific domains in production)
+//   credentials: true, // Allow cookies and credentials to be sent
+//   methods: ["GET", "POST", "PATCH", "DELETE"], // Allow these HTTP methods
+// };
 
-app.use(cors(corsConfig));
+// app.use(cors(corsConfig));
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;

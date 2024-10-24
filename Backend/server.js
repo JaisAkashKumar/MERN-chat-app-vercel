@@ -9,7 +9,12 @@ import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
-const cors = require("cors");
+import cors from "cors";
+import { fileURLToPath } from "url";
+
+// Get the filename and directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const corsConfig = {
   origin: "*", // Allow all origins (use specific domains in production)

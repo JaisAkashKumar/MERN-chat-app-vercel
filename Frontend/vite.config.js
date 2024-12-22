@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       "/api": {
-        target: "https://akash-chat-app.vercel.app",
+        target: "https://akash-chat-app.vercel.app/",
         changeOrigin: true,
       },
     },

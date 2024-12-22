@@ -12,13 +12,12 @@
   "rewrites": [
     {
       "source": "/(.*)", 
-      "destination": "server.js"
+      "destination": "/server.js"
     }
   ],
   "functions": {
-      "app/api/**/route.ts": {
-        "maxDuration": 5
-      }
+    "api/**": {
+      "maxDuration": 10
     }
-  
+  }
 }
